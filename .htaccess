@@ -19,6 +19,7 @@ RewriteRule ^compteController/new$ controllers/compteController.php?new
 
 RewriteRule ^compteController/edit/([0-9]+)$ views/comptes/edit.php?id=$1
 RewriteRule ^compteController/update$ controllers/compteController.php?update
+RewriteRule ^compteController/delete/([0-9]+)$ controllers/compteController.php?delete=$1
 
 
 

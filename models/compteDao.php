@@ -53,5 +53,12 @@
         return $requete->fetchAll();
 
     }
+    function deleteCompte(int $id){
+        $pdo = getPdo();
+        $requete = $pdo->prepare("DELETE FROM compte WHERE id=:id");
+
+        $requete->bindValue(":id",$id,PDO::PARAM_INT);
+        $requete->execute();
+    }
 
 
