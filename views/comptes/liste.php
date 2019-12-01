@@ -63,7 +63,7 @@
 </div>
 <div class="col-md-8">
     <div class="panel panel-primary">
-        <div class="panel-heading">LISTE DES COMPTE</div>
+        <div class="panel-heading">LISTE DES COMPTES</div>
         <div class="panel-body">
             <table class="table table-striped table-bordered" id="example1">
                 <thead>
@@ -77,12 +77,17 @@
                         <td><?php echo $num++ ?></td>
                         <td><?php echo $value['numero'] ?></td>
                         <td><?php echo $value['solde'] ?></td>
-                        <td><?php echo $value['dateCreation'] ?></td>
+                        <td>
+                            <?php
+                            $date = new DateTime($value['dateCreation']);
+                            echo $date->format('d/m/Y H:s:i');
+                            ?>
+                        </td>
                         <td><?php echo $value['etat']==1?"<span class='text-success'>Activé</span>":"<span class='text-danger'>Déactivé</span>" ?></td>
                         <!--<td><?php //echo $value['prenom'] ?></td>-->
                         <td>
-                            <a href="compteController/delete?id=<?php echo 1; ?>" class="btn btn-x btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
-                            <a href="compteController/edit?id=<?php echo 1; ?>" class="btn btn-x btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a href="compteController/delete/<?= $value["idC"]?>" class="btn btn-x btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+                            <a href="compteController/edit/<?= $value["idC"]?>" class="btn btn-x btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

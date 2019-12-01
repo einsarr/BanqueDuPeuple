@@ -3,7 +3,8 @@ require_once "../models/compteDao.php";
 //var_dump($_GET);die;
 extract($_POST);
 if(isset($id) && isset($_GET["update"])){
-    echo "Update";
+    updateCompte($id,$numero,$solde,$etat);
+    echo "<script>alert('Compte mise à jour avec succès'); window.location = '../comptes';</script>";
 }else if(isset($id) && isset($_GET["delete"])){
     echo "DELETE";
 }else if(isset($_GET['new'])){
