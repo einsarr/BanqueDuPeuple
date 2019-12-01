@@ -65,7 +65,7 @@
 function comptesClient($id){
     $pdo = getPdo();
 
-    $requete = $pdo->prepare("SELECT cpt.*,clt.* FROM compte cpt JOIN client clt ON clt.id = cpt.idCl WHERE clt.id=:id");
+    $requete = $pdo->prepare("SELECT cpt.id as idC, cpt.*,clt.* FROM compte cpt JOIN client clt ON clt.id = cpt.idCl WHERE clt.id=:id");
     $requete->bindValue(":id",$id,PDO::PARAM_INT);
     $requete->execute();
     return $requete->fetchAll();

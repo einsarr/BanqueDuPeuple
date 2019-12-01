@@ -27,8 +27,8 @@ $leClient = findClientById($_GET['id']);
                         <td><?= $value['dateCreation'] ?></td>
                         <td><?= $value['etat']==0?"<span class='text-danger'>Déactivé</span>":"<span class='text-success'>Activé</span>" ?></td>
                         <td>
-                            <a href="../../compteController/delete?id=<?= $value['id'] ?>" class="btn btn-x btn-danger"><span class="glyphicon glyphicon-remove"></span></span></a>
-                            <a href="../../compteController/edit?id=<?= $value['id'] ?>" class="btn btn-x btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a href="../../compteController/delete/<?= $value["idC"]?>" class="btn btn-x btn-danger" onclick="return confirm('Etes-vous sûre de vouloir supprimer?')"><span class="glyphicon glyphicon-remove"></span></a>
+                            <a href="../../compteController/edit/<?= $value["idC"]?>" class="btn btn-x btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
