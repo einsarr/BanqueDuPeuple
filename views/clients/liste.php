@@ -30,18 +30,14 @@ $lesClients = findAllClients();
                     <td>
                         <a href="clientController/delete/<?= $value["id"]?>" class="btn btn-x btn-danger" onclick="return confirm('Etes-vous sûre de vouloir supprimer?')"><span class="glyphicon glyphicon-trash"></span></a>
                         <a href="clientController/edit/<?= $value["id"]?>" class="btn btn-x btn-warning"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a href="clientController/listeCompte/<?= $value["id"]?>" class="btn btn-x btn-info"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        <a href="clientController/listeCompte/<?= $value["id"]?>" class="btn btn-x btn-info" data-toggle="modal" data-target="#exampleModalCenter"><span class="glyphicon glyphicon-eye-open"></span></a>
                         <a href="compteController/newCompte/<?= $value["id"]?>" class="btn btn-x btn-success"><span class="glyphicon glyphicon-plus-sign"></span></a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>
-
-<?php require_once "../../public/template/footer.php";?>
-
-
-

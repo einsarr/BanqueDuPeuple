@@ -1,4 +1,5 @@
         </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <script src="public/js/jquery.min.js"></script>
         <script src="public/js/jquery.dataTables.js"></script>
         <script src="public/js/time.js"></script>
